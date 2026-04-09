@@ -3,7 +3,6 @@ D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLa
 D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\bin\Debug\net10.0-windows\CipherLab.runtimeconfig.json
 D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\bin\Debug\net10.0-windows\CipherLab.dll
 D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\bin\Debug\net10.0-windows\CipherLab.pdb
-D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\CipherLab.Form1.resources
 D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\CipherLab.csproj.GenerateResource.cache
 D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\CipherLab.GeneratedMSBuildEditorConfig.editorconfig
 D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\CipherLab.AssemblyInfoInputs.cache
@@ -15,3 +14,6 @@ D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLa
 D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\CipherLab.pdb
 D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\CipherLab.genruntimeconfig.cache
 D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\ref\CipherLab.dll
+D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\CipherLab.Menu_Form.resources
+D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\CipherLab.Playfair_Form.resources
+D:\Studying\Học Kỳ 4\An toàn mạng máy tính\Đồ án\NT101.Q22_CipherLab\CipherLab\CipherLab\obj\Debug\net10.0-windows\CipherLab.RSA_Form.resources

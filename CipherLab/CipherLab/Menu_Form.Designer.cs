@@ -30,8 +30,8 @@
         {
             label_Title = new Label();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
+            btn_openRSA = new Button();
+            btn_openPlayfair = new Button();
             SuspendLayout();
             // 
             // label_Title
@@ -54,36 +54,38 @@
             label1.TabIndex = 1;
             label1.Text = "CipherLab";
             // 
-            // button1
+            // btn_openRSA
             // 
-            button1.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.Location = new Point(121, 126);
-            button1.Name = "button1";
-            button1.Size = new Size(135, 46);
-            button1.TabIndex = 2;
-            button1.Text = "RSA";
-            button1.UseVisualStyleBackColor = true;
+            btn_openRSA.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_openRSA.Location = new Point(121, 126);
+            btn_openRSA.Name = "btn_openRSA";
+            btn_openRSA.Size = new Size(135, 46);
+            btn_openRSA.TabIndex = 2;
+            btn_openRSA.Text = "RSA";
+            btn_openRSA.UseVisualStyleBackColor = true;
+            btn_openRSA.Click += btn_openRSA_Click;
             // 
-            // button2
+            // btn_openPlayfair
             // 
-            button2.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(349, 126);
-            button2.Name = "button2";
-            button2.Size = new Size(135, 46);
-            button2.TabIndex = 3;
-            button2.Text = "Playfair";
-            button2.UseVisualStyleBackColor = true;
+            btn_openPlayfair.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btn_openPlayfair.Location = new Point(349, 126);
+            btn_openPlayfair.Name = "btn_openPlayfair";
+            btn_openPlayfair.Size = new Size(135, 46);
+            btn_openPlayfair.TabIndex = 3;
+            btn_openPlayfair.Text = "Playfair";
+            btn_openPlayfair.UseVisualStyleBackColor = true;
+            btn_openPlayfair.Click += btn_openPlayfair_Click;
             // 
-            // Form1
+            // Menu_Form
             // 
             AutoScaleDimensions = new SizeF(8F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(611, 187);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btn_openPlayfair);
+            Controls.Add(btn_openRSA);
             Controls.Add(label1);
             Controls.Add(label_Title);
-            Name = "Form1";
+            Name = "Menu_Form";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();
@@ -93,7 +95,7 @@
 
         private Label label_Title;
         private Label label1;
-        private Button button1;
-        private Button button2;
+        private Button btn_openRSA;
+        private Button btn_openPlayfair;
     }
 }

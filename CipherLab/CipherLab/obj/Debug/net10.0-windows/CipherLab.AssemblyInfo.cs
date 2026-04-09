@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CipherLab")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+50bc9c6d812beba0e5651357f7908e9e99d14975")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa9614317f7dd74036659d74ed24bb553c90873f")]
 [assembly: System.Reflection.AssemblyProductAttribute("CipherLab")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CipherLab")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
