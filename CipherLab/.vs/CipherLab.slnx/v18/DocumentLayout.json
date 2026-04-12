@@ -3,20 +3,24 @@
   "WorkspaceRootPath": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|d:\\studying\\h\u1ECDc k\u1EF3 4\\an to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0111\u1ED3 \u00E1n\\nt101.q22_cipherlab\\cipherlab\\cipherlab\\rsa_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|solutionrelative:cipherlab\\rsa_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|d:\\studying\\h\u1ECDc k\u1EF3 4\\an to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0111\u1ED3 \u00E1n\\nt101.q22_cipherlab\\cipherlab\\cipherlab\\menu_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|solutionrelative:cipherlab\\menu_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|d:\\studying\\h\u1ECDc k\u1EF3 4\\an to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0111\u1ED3 \u00E1n\\nt101.q22_cipherlab\\cipherlab\\cipherlab\\playfair_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|solutionrelative:cipherlab\\playfair_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|d:\\studying\\h\u1ECDc k\u1EF3 4\\an to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0111\u1ED3 \u00E1n\\nt101.q22_cipherlab\\cipherlab\\cipherlab\\rsa_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|solutionrelative:cipherlab\\rsa_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|d:\\studying\\h\u1ECDc k\u1EF3 4\\an to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0111\u1ED3 \u00E1n\\nt101.q22_cipherlab\\cipherlab\\cipherlab\\playfair_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|solutionrelative:cipherlab\\playfair_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|d:\\studying\\h\u1ECDc k\u1EF3 4\\an to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0111\u1ED3 \u00E1n\\nt101.q22_cipherlab\\cipherlab\\cipherlab\\menu_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|solutionrelative:cipherlab\\menu_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|d:\\studying\\h\u1ECDc k\u1EF3 4\\an to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0111\u1ED3 \u00E1n\\nt101.q22_cipherlab\\cipherlab\\cipherlab\\rsa_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CC1F8A49-EC88-BAF8-1194-7D00E8D11A71}|CipherLab\\CipherLab.csproj|solutionrelative:cipherlab\\rsa_form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,30 +30,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "RSA_Form.cs [Design]",
-              "DocumentMoniker": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\RSA_Form.cs",
-              "RelativeDocumentMoniker": "CipherLab\\RSA_Form.cs",
-              "ToolTip": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\RSA_Form.cs [Design]",
-              "RelativeToolTip": "CipherLab\\RSA_Form.cs [Design]",
+              "DocumentIndex": 2,
+              "Title": "Playfair_Form.cs",
+              "DocumentMoniker": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\Playfair_Form.cs",
+              "RelativeDocumentMoniker": "CipherLab\\Playfair_Form.cs",
+              "ToolTip": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\Playfair_Form.cs",
+              "RelativeToolTip": "CipherLab\\Playfair_Form.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAlwBAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T07:39:11.124Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-04-12T07:01:37.072Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Playfair_Form.cs [Design]",
               "DocumentMoniker": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\Playfair_Form.cs",
               "RelativeDocumentMoniker": "CipherLab\\Playfair_Form.cs",
               "ToolTip": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\Playfair_Form.cs [Design]",
               "RelativeToolTip": "CipherLab\\Playfair_Form.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T07:38:34.653Z",
+              "WhenOpened": "2026-04-12T06:40:16.335Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RSA_Form.cs [Design]",
+              "DocumentMoniker": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\RSA_Form.cs",
+              "RelativeDocumentMoniker": "CipherLab\\RSA_Form.cs",
+              "ToolTip": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\RSA_Form.cs [Design]",
+              "RelativeToolTip": "CipherLab\\RSA_Form.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-09T16:11:43.073Z",
               "EditorCaption": " [Design]"
             },
             {
@@ -60,22 +77,22 @@
               "RelativeDocumentMoniker": "CipherLab\\Menu_Form.cs",
               "ToolTip": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\Menu_Form.cs",
               "RelativeToolTip": "CipherLab\\Menu_Form.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T07:18:48.287Z",
+              "WhenOpened": "2026-04-09T08:23:55.885Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Menu_Form.cs [Design]",
-              "DocumentMoniker": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\Menu_Form.cs",
-              "RelativeDocumentMoniker": "CipherLab\\Menu_Form.cs",
-              "ToolTip": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\Menu_Form.cs [Design]",
-              "RelativeToolTip": "CipherLab\\Menu_Form.cs [Design]",
+              "DocumentIndex": 4,
+              "Title": "RSA_Form.cs",
+              "DocumentMoniker": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\RSA_Form.cs",
+              "RelativeDocumentMoniker": "CipherLab\\RSA_Form.cs",
+              "ToolTip": "D:\\Studying\\H\u1ECDc K\u1EF3 4\\An to\u00E0n m\u1EA1ng m\u00E1y t\u00EDnh\\\u0110\u1ED3 \u00E1n\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\RSA_Form.cs",
+              "RelativeToolTip": "CipherLab\\RSA_Form.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAASwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-06T07:17:50.746Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-04-09T08:21:32.529Z"
             }
           ]
         }
