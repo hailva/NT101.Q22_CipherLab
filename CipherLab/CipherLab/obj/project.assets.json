@@ -8,19 +8,24 @@
     "net10.0-windows7.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Arer\\.nuget\\packages\\": {}
+    "C:\\Users\\Nhutkhanh\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Studying\\Học Kỳ 4\\An toàn mạng máy tính\\Đồ án\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\CipherLab.csproj",
+      "projectUniqueName": "D:\\NT101-doan\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\CipherLab.csproj",
       "projectName": "CipherLab",
-      "projectPath": "D:\\Studying\\Học Kỳ 4\\An toàn mạng máy tính\\Đồ án\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\CipherLab.csproj",
-      "packagesPath": "C:\\Users\\Arer\\.nuget\\packages\\",
-      "outputPath": "D:\\Studying\\Học Kỳ 4\\An toàn mạng máy tính\\Đồ án\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\obj\\",
+      "projectPath": "D:\\NT101-doan\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\CipherLab.csproj",
+      "packagesPath": "C:\\Users\\Nhutkhanh\\.nuget\\packages\\",
+      "outputPath": "D:\\NT101-doan\\NT101.Q22_CipherLab\\CipherLab\\CipherLab\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Arer\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Nhutkhanh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -32,6 +37,7 @@
       },
       "frameworks": {
         "net10.0-windows7.0": {
+          "framework": "net10.0-windows7.0",
           "targetAlias": "net10.0-windows",
           "projectReferences": {}
         }
@@ -50,6 +56,7 @@
     },
     "frameworks": {
       "net10.0-windows7.0": {
+        "framework": "net10.0-windows7.0",
         "targetAlias": "net10.0-windows",
         "imports": [
           "net461",
@@ -70,7 +77,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.201/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
