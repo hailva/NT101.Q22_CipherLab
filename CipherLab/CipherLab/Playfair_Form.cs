@@ -21,9 +21,6 @@ namespace CipherLab
             InitializeComponent();
         }
 
-        // ──────────────────────────────────────────────────────────
-        //  Button handlers
-        // ──────────────────────────────────────────────────────────
 
         private void btn_createMatrix_Click(object sender, EventArgs e)
         {
@@ -124,10 +121,6 @@ namespace CipherLab
                 btn_createMatrix_Click(sender, e);
         }
 
-        // ──────────────────────────────────────────────────────────
-        //  TextChanged handlers
-        // ──────────────────────────────────────────────────────────
-
         private void tb_key_TextChanged(object sender, EventArgs e) { }
         private void tb_input_TextChanged(object sender, EventArgs e) { }
 
@@ -156,12 +149,6 @@ namespace CipherLab
 
         private void dgv_matrix_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
 
-        // ──────────────────────────────────────────────────────────
-        //  Helpers
-        // ──────────────────────────────────────────────────────────
-
-        // Build cipher lazily if the user clicks Encrypt/Decrypt
-        // without pressing Create Matrix first.
         private bool EnsureCipher()
         {
             if (_cipher != null) return true;
@@ -194,9 +181,6 @@ namespace CipherLab
             dgv_matrix.Rows.Clear();
             dgv_matrix.Columns.Clear();
 
-            // AllowUserToAddRows MUST be false BEFORE RowCount is set.
-            // Setting it after causes WinForms to include a phantom "new row"
-            // in the count, leaving only (size-1) real rows → IndexOutOfRange.
             dgv_matrix.AllowUserToAddRows = false;
             dgv_matrix.RowHeadersVisible = false;
             dgv_matrix.ColumnHeadersVisible = false;
@@ -220,24 +204,19 @@ namespace CipherLab
         }
     }
 
-    // =============================================================
     //  PlayfairCipher — core logic
-    // =============================================================
+
     public class PlayfairCipher
     {
         public char[,] Matrix { get; private set; }
         public int Size { get; private set; }
 
-        // Character → (row, col) lookup table
         private readonly Dictionary<char, (int row, int col)> _pos =
             new Dictionary<char, (int, int)>();
 
-        // ──────────────────────────────────────────────────────────
-        //  Constructor
         //  forcedSize = 5  → force 5×5  (letters only, I=J)
         //  forcedSize = 6  → force 6×6  (A-Z + 0-9, no merge)
         //  forcedSize = 0  → auto-detect (digit in key → 6, else 5)
-        // ──────────────────────────────────────────────────────────
         public PlayfairCipher(string key, int forcedSize = 0)
         {
             if (string.IsNullOrEmpty(key))
@@ -258,9 +237,6 @@ namespace CipherLab
             BuildMatrix(key.ToUpper(), Size);
         }
 
-        // ──────────────────────────────────────────────────────────
-        //  Matrix construction
-        // ──────────────────────────────────────────────────────────
         private void BuildMatrix(string key, int size)
         {
             string alphabet = (size == 5)
@@ -292,10 +268,6 @@ namespace CipherLab
             }
         }
 
-        // ──────────────────────────────────────────────────────────
-        //  Normalise a single character for this matrix size.
-        //  Returns '\0' if the character does not belong.
-        // ──────────────────────────────────────────────────────────
         private char Normalize(char c, int size)
         {
             c = char.ToUpper(c);
@@ -313,9 +285,8 @@ namespace CipherLab
             }
         }
 
-        // ──────────────────────────────────────────────────────────
         //  Plaintext → list of digraph pairs
-        // ──────────────────────────────────────────────────────────
+  
         private List<(char, char)> MakePairs(string text)
         {
             // 1. Strip invalid characters
@@ -341,8 +312,6 @@ namespace CipherLab
                     char second = clean[idx];
                     if (second == first)
                     {
-                        // Insert filler; do NOT consume 'second' yet —
-                        // it will become the first char of the next pair
                         chars.Add(first == 'X' ? 'Q' : 'X');
                     }
                     else
@@ -368,9 +337,7 @@ namespace CipherLab
             return pairs;
         }
 
-        // ──────────────────────────────────────────────────────────
         //  Encrypt / Decrypt a single digraph pair
-        // ──────────────────────────────────────────────────────────
         private (char, char) EncryptPair(char a, char b)
         {
             var (r1, c1) = _pos[a];
@@ -403,9 +370,7 @@ namespace CipherLab
             return (Matrix[r1, c2], Matrix[r2, c1]); // rectangle (same as encrypt)
         }
 
-        // ──────────────────────────────────────────────────────────
         //  Public API
-        // ──────────────────────────────────────────────────────────
         public string Encrypt(string plaintext)
         {
             if (string.IsNullOrEmpty(plaintext)) return string.Empty;
