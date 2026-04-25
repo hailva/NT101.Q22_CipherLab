@@ -81,6 +81,7 @@
             tb_key.Font = new Font("Calibri", 11.7818184F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tb_key.Location = new Point(48, 29);
             tb_key.Name = "tb_key";
+            tb_key.ScrollBars = ScrollBars.Both;
             tb_key.Size = new Size(217, 31);
             tb_key.TabIndex = 1;
             toolTip1.SetToolTip(tb_key, "A keyword or a phrase.");
@@ -231,6 +232,7 @@
             tb_output.Multiline = true;
             tb_output.Name = "tb_output";
             tb_output.ReadOnly = true;
+            tb_output.ScrollBars = ScrollBars.Both;
             tb_output.Size = new Size(390, 164);
             tb_output.TabIndex = 5;
             tb_output.TextChanged += tb_output_TextChanged;
@@ -251,6 +253,7 @@
             tb_input.Location = new Point(6, 59);
             tb_input.Multiline = true;
             tb_input.Name = "tb_input";
+            tb_input.ScrollBars = ScrollBars.Both;
             tb_input.Size = new Size(390, 165);
             tb_input.TabIndex = 3;
             tb_input.TextChanged += tb_input_TextChanged;

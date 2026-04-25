@@ -11,9 +11,9 @@ namespace CipherLab
     public partial class Playfair_Form : Form
     {
         private PlayfairCipher _cipher = null;
-        private bool _formattingOutput = false;   // guard against recursive TextChanged
+        private bool _formattingOutput = false; // guard: prevent recursive TextChanged
 
-        // Returns the size chosen by the user on the UI (default 5)
+        // Read radio button → size (5 or 6)
         private int SelectedSize => rd_6x6.Checked ? 6 : 5;
 
         public Playfair_Form()
@@ -21,9 +21,9 @@ namespace CipherLab
             InitializeComponent();
         }
 
-        // ─────────────────────────────────────────────
+        // ──────────────────────────────────────────────────────────
         //  Button handlers
-        // ─────────────────────────────────────────────
+        // ──────────────────────────────────────────────────────────
 
         private void btn_createMatrix_Click(object sender, EventArgs e)
         {
@@ -37,13 +37,14 @@ namespace CipherLab
 
             try
             {
-                _cipher = new PlayfairCipher(key);
+                // Pass SelectedSize so radio button is always respected
+                _cipher = new PlayfairCipher(key, SelectedSize);
                 DisplayMatrix(_cipher.Matrix, _cipher.Size);
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error building matrix: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error building matrix: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -56,8 +57,8 @@ namespace CipherLab
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Encryption error: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Encryption error: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -70,8 +71,8 @@ namespace CipherLab
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Decryption error: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Decryption error: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -98,17 +99,18 @@ namespace CipherLab
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show("Could not read file: " + ex.Message, "Error",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Could not read file: " + ex.Message,
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
         }
 
-        // ─────────────────────────────────────────────
-        //  Radio-button handlers — rebuild matrix when
-        //  the user switches size and a key exists
-        // ─────────────────────────────────────────────
+        // ──────────────────────────────────────────────────────────
+        //  Radio-button handlers
+        //  CheckedChanged fires AFTER the new state is committed, so
+        //  SelectedSize already returns the correct value here.
+        // ──────────────────────────────────────────────────────────
 
         private void rd_5x5_CheckedChanged(object sender, EventArgs e)
         {
@@ -122,23 +124,23 @@ namespace CipherLab
                 btn_createMatrix_Click(sender, e);
         }
 
-        // ─────────────────────────────────────────────
-        //  TextChanged stubs (kept to satisfy designer)
-        // ─────────────────────────────────────────────
+        // ──────────────────────────────────────────────────────────
+        //  TextChanged handlers
+        // ──────────────────────────────────────────────────────────
 
         private void tb_key_TextChanged(object sender, EventArgs e) { }
         private void tb_input_TextChanged(object sender, EventArgs e) { }
 
-        // Format output as pairs separated by spaces: ABCDEF → AB CD EF
+        // Format output as pairs separated by a space: ABCDEF → AB CD EF
         private void tb_output_TextChanged(object sender, EventArgs e)
         {
-            if (_formattingOutput) return;          // prevent infinite loop
+            if (_formattingOutput) return;
             _formattingOutput = true;
 
             string raw = tb_output.Text.Replace(" ", "");
             if (raw.Length > 0)
             {
-                StringBuilder sb = new StringBuilder();
+                var sb = new StringBuilder();
                 for (int i = 0; i < raw.Length; i += 2)
                 {
                     if (i > 0) sb.Append(' ');
@@ -146,7 +148,7 @@ namespace CipherLab
                     if (i + 1 < raw.Length) sb.Append(raw[i + 1]);
                 }
                 tb_output.Text = sb.ToString();
-                tb_output.SelectionStart = tb_output.Text.Length; // keep cursor at end
+                tb_output.SelectionStart = tb_output.Text.Length;
             }
 
             _formattingOutput = false;
@@ -154,10 +156,12 @@ namespace CipherLab
 
         private void dgv_matrix_CellContentClick(object sender, DataGridViewCellEventArgs e) { }
 
-        // ─────────────────────────────────────────────
+        // ──────────────────────────────────────────────────────────
         //  Helpers
-        // ─────────────────────────────────────────────
+        // ──────────────────────────────────────────────────────────
 
+        // Build cipher lazily if the user clicks Encrypt/Decrypt
+        // without pressing Create Matrix first.
         private bool EnsureCipher()
         {
             if (_cipher != null) return true;
@@ -172,14 +176,15 @@ namespace CipherLab
 
             try
             {
-                _cipher = new PlayfairCipher(key);
+                // Pass SelectedSize here too
+                _cipher = new PlayfairCipher(key, SelectedSize);
                 DisplayMatrix(_cipher.Matrix, _cipher.Size);
                 return true;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error building matrix: " + ex.Message, "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error building matrix: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
@@ -189,9 +194,9 @@ namespace CipherLab
             dgv_matrix.Rows.Clear();
             dgv_matrix.Columns.Clear();
 
-            // MUST be false BEFORE setting RowCount —
-            // otherwise WinForms counts the phantom "new row"
-            // inside RowCount, leaving only (size-1) real rows.
+            // AllowUserToAddRows MUST be false BEFORE RowCount is set.
+            // Setting it after causes WinForms to include a phantom "new row"
+            // in the count, leaving only (size-1) real rows → IndexOutOfRange.
             dgv_matrix.AllowUserToAddRows = false;
             dgv_matrix.RowHeadersVisible = false;
             dgv_matrix.ColumnHeadersVisible = false;
@@ -203,7 +208,8 @@ namespace CipherLab
             foreach (DataGridViewColumn col in dgv_matrix.Columns)
             {
                 col.Width = cellSize;
-                col.DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                col.DefaultCellStyle.Alignment =
+                    DataGridViewContentAlignment.MiddleCenter;
             }
             foreach (DataGridViewRow row in dgv_matrix.Rows)
                 row.Height = cellSize;
@@ -214,47 +220,57 @@ namespace CipherLab
         }
     }
 
-    // =================================================================
+    // =============================================================
     //  PlayfairCipher — core logic
-    // =================================================================
-
+    // =============================================================
     public class PlayfairCipher
     {
         public char[,] Matrix { get; private set; }
         public int Size { get; private set; }
 
-        // Lookup: character → (row, col)
-        private Dictionary<char, (int row, int col)> _pos =
+        // Character → (row, col) lookup table
+        private readonly Dictionary<char, (int row, int col)> _pos =
             new Dictionary<char, (int, int)>();
 
-        public PlayfairCipher(string key)
+        // ──────────────────────────────────────────────────────────
+        //  Constructor
+        //  forcedSize = 5  → force 5×5  (letters only, I=J)
+        //  forcedSize = 6  → force 6×6  (A-Z + 0-9, no merge)
+        //  forcedSize = 0  → auto-detect (digit in key → 6, else 5)
+        // ──────────────────────────────────────────────────────────
+        public PlayfairCipher(string key, int forcedSize = 0)
         {
             if (string.IsNullOrEmpty(key))
                 throw new ArgumentException("Key cannot be empty.");
 
-            bool hasDigit = false;
-            foreach (char c in key)
-                if (char.IsDigit(c)) { hasDigit = true; break; }
+            if (forcedSize == 5 || forcedSize == 6)
+            {
+                Size = forcedSize;
+            }
+            else
+            {
+                bool hasDigit = false;
+                foreach (char c in key)
+                    if (char.IsDigit(c)) { hasDigit = true; break; }
+                Size = hasDigit ? 6 : 5;
+            }
 
-            Size = hasDigit ? 6 : 5;
             BuildMatrix(key.ToUpper(), Size);
         }
 
-        // ─────────────────────────────────────────────
+        // ──────────────────────────────────────────────────────────
         //  Matrix construction
-        // ─────────────────────────────────────────────
-
+        // ──────────────────────────────────────────────────────────
         private void BuildMatrix(string key, int size)
         {
-            // Build the ordered alphabet for this matrix
             string alphabet = (size == 5)
-                ? "ABCDEFGHIKLMNOPQRSTUVWXYZ"   // I and J merged; no J
+                ? "ABCDEFGHIKLMNOPQRSTUVWXYZ"            // 25 chars, I=J
                 : "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; // 36 chars
 
-            List<char> sequence = new List<char>();
-            HashSet<char> seen = new HashSet<char>();
+            var sequence = new List<char>();
+            var seen = new HashSet<char>();
 
-            // Add key characters first (normalised)
+            // 1. Key chars first (normalised, deduped)
             foreach (char raw in key)
             {
                 char c = Normalize(raw, size);
@@ -262,11 +278,11 @@ namespace CipherLab
                 if (seen.Add(c)) sequence.Add(c);
             }
 
-            // Fill remaining alphabet characters
+            // 2. Remaining alphabet
             foreach (char c in alphabet)
                 if (seen.Add(c)) sequence.Add(c);
 
-            // Populate matrix
+            // 3. Fill matrix and build lookup
             Matrix = new char[size, size];
             for (int i = 0; i < size * size; i++)
             {
@@ -276,30 +292,34 @@ namespace CipherLab
             }
         }
 
-        // ─────────────────────────────────────────────
-        //  Text preprocessing
-        // ─────────────────────────────────────────────
-
+        // ──────────────────────────────────────────────────────────
+        //  Normalise a single character for this matrix size.
+        //  Returns '\0' if the character does not belong.
+        // ──────────────────────────────────────────────────────────
         private char Normalize(char c, int size)
         {
             c = char.ToUpper(c);
             if (size == 5)
             {
-                if (c == 'J') return 'I';
+                if (c == 'J') return 'I';           // merge J into I
                 if (c >= 'A' && c <= 'Z') return c;
                 return '\0';
             }
-            else // 6x6
+            else // 6×6
             {
-                if ((c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9')) return c;
+                if ((c >= 'A' && c <= 'Z') ||
+                    (c >= '0' && c <= '9')) return c;
                 return '\0';
             }
         }
 
+        // ──────────────────────────────────────────────────────────
+        //  Plaintext → list of digraph pairs
+        // ──────────────────────────────────────────────────────────
         private List<(char, char)> MakePairs(string text)
         {
-            // 1. Normalise input
-            StringBuilder sb = new StringBuilder();
+            // 1. Strip invalid characters
+            var sb = new StringBuilder();
             foreach (char c in text.ToUpper())
             {
                 char n = Normalize(c, Size);
@@ -307,8 +327,9 @@ namespace CipherLab
             }
             string clean = sb.ToString();
 
-            // 2. Split into digraphs, inserting 'X' between repeated chars
-            List<char> chars = new List<char>();
+            // 2. Build char list, inserting filler 'X' (or 'Q') between
+            //    two identical characters that would form a pair
+            var chars = new List<char>();
             int idx = 0;
             while (idx < clean.Length)
             {
@@ -320,10 +341,9 @@ namespace CipherLab
                     char second = clean[idx];
                     if (second == first)
                     {
-                        // Insert filler
-                        char filler = (first == 'X') ? 'Q' : 'X';
-                        chars.Add(filler);
-                        // do NOT advance idx — second char will form next pair
+                        // Insert filler; do NOT consume 'second' yet —
+                        // it will become the first char of the next pair
+                        chars.Add(first == 'X' ? 'Q' : 'X');
                     }
                     else
                     {
@@ -337,34 +357,34 @@ namespace CipherLab
             if (chars.Count % 2 != 0)
             {
                 char last = chars[chars.Count - 1];
-                chars.Add((last == 'X') ? 'Q' : 'X');
+                chars.Add(last == 'X' ? 'Q' : 'X');
             }
 
-            // 4. Return as pairs
-            List<(char, char)> pairs = new List<(char, char)>();
+            // 4. Return as (char, char) pairs
+            var pairs = new List<(char, char)>();
             for (int i = 0; i < chars.Count; i += 2)
                 pairs.Add((chars[i], chars[i + 1]));
 
             return pairs;
         }
 
-        // ─────────────────────────────────────────────
-        //  Core cipher rules
-        // ─────────────────────────────────────────────
-
+        // ──────────────────────────────────────────────────────────
+        //  Encrypt / Decrypt a single digraph pair
+        // ──────────────────────────────────────────────────────────
         private (char, char) EncryptPair(char a, char b)
         {
             var (r1, c1) = _pos[a];
             var (r2, c2) = _pos[b];
 
-            if (r1 == r2) // same row → shift right
-                return (Matrix[r1, (c1 + 1) % Size], Matrix[r2, (c2 + 1) % Size]);
+            if (r1 == r2)   // same row → shift right (wrap)
+                return (Matrix[r1, (c1 + 1) % Size],
+                        Matrix[r2, (c2 + 1) % Size]);
 
-            if (c1 == c2) // same col → shift down
-                return (Matrix[(r1 + 1) % Size, c1], Matrix[(r2 + 1) % Size, c2]);
+            if (c1 == c2)   // same col → shift down (wrap)
+                return (Matrix[(r1 + 1) % Size, c1],
+                        Matrix[(r2 + 1) % Size, c2]);
 
-            // rectangle → swap columns
-            return (Matrix[r1, c2], Matrix[r2, c1]);
+            return (Matrix[r1, c2], Matrix[r2, c1]); // rectangle
         }
 
         private (char, char) DecryptPair(char a, char b)
@@ -372,27 +392,26 @@ namespace CipherLab
             var (r1, c1) = _pos[a];
             var (r2, c2) = _pos[b];
 
-            if (r1 == r2) // same row → shift left
-                return (Matrix[r1, (c1 + Size - 1) % Size], Matrix[r2, (c2 + Size - 1) % Size]);
+            if (r1 == r2)   // same row → shift left (wrap)
+                return (Matrix[r1, (c1 + Size - 1) % Size],
+                        Matrix[r2, (c2 + Size - 1) % Size]);
 
-            if (c1 == c2) // same col → shift up
-                return (Matrix[(r1 + Size - 1) % Size, c1], Matrix[(r2 + Size - 1) % Size, c2]);
+            if (c1 == c2)   // same col → shift up (wrap)
+                return (Matrix[(r1 + Size - 1) % Size, c1],
+                        Matrix[(r2 + Size - 1) % Size, c2]);
 
-            // rectangle → swap columns
-            return (Matrix[r1, c2], Matrix[r2, c1]);
+            return (Matrix[r1, c2], Matrix[r2, c1]); // rectangle (same as encrypt)
         }
 
-        // ─────────────────────────────────────────────
+        // ──────────────────────────────────────────────────────────
         //  Public API
-        // ─────────────────────────────────────────────
-
+        // ──────────────────────────────────────────────────────────
         public string Encrypt(string plaintext)
         {
-            if (string.IsNullOrEmpty(plaintext))
-                return string.Empty;
+            if (string.IsNullOrEmpty(plaintext)) return string.Empty;
 
             var pairs = MakePairs(plaintext);
-            StringBuilder result = new StringBuilder();
+            var result = new StringBuilder();
             foreach (var (a, b) in pairs)
             {
                 var (ea, eb) = EncryptPair(a, b);
@@ -403,11 +422,10 @@ namespace CipherLab
 
         public string Decrypt(string ciphertext)
         {
-            if (string.IsNullOrEmpty(ciphertext))
-                return string.Empty;
+            if (string.IsNullOrEmpty(ciphertext)) return string.Empty;
 
-            // Ciphertext should already be clean pairs; still normalise
-            StringBuilder sb = new StringBuilder();
+            // Strip spaces and invalid chars from ciphertext
+            var sb = new StringBuilder();
             foreach (char c in ciphertext.ToUpper())
             {
                 char n = Normalize(c, Size);
@@ -419,7 +437,7 @@ namespace CipherLab
                 throw new ArgumentException(
                     "Ciphertext has an odd number of valid characters.");
 
-            StringBuilder result = new StringBuilder();
+            var result = new StringBuilder();
             for (int i = 0; i < clean.Length; i += 2)
             {
                 var (da, db) = DecryptPair(clean[i], clean[i + 1]);
