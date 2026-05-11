@@ -73,9 +73,9 @@
             groupBox2.Controls.Add(tb_numQ);
             groupBox2.Controls.Add(tb_numP);
             groupBox2.Font = new Font("Calibri", 11.7818184F, FontStyle.Bold);
-            groupBox2.Location = new Point(12, 12);
+            groupBox2.Location = new Point(12, 13);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(303, 174);
+            groupBox2.Size = new Size(303, 183);
             groupBox2.TabIndex = 1;
             groupBox2.TabStop = false;
             groupBox2.Text = "Key Parameter";
@@ -83,30 +83,32 @@
             // btn_generate
             // 
             btn_generate.Font = new Font("Calibri", 11.7818184F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_generate.Location = new Point(102, 133);
+            btn_generate.Location = new Point(89, 140);
             btn_generate.Name = "btn_generate";
-            btn_generate.Size = new Size(93, 32);
+            btn_generate.Size = new Size(106, 34);
             btn_generate.TabIndex = 7;
             btn_generate.Text = "Generate";
             btn_generate.UseVisualStyleBackColor = true;
+            btn_generate.Click += btn_generate_Click;
             // 
             // btn_calculate
             // 
             btn_calculate.Font = new Font("Calibri", 11.7818184F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_calculate.Location = new Point(201, 133);
+            btn_calculate.Location = new Point(191, 140);
             btn_calculate.Name = "btn_calculate";
-            btn_calculate.Size = new Size(93, 32);
+            btn_calculate.Size = new Size(103, 34);
             btn_calculate.TabIndex = 6;
             btn_calculate.Text = "Calculate";
             btn_calculate.UseVisualStyleBackColor = true;
+            btn_calculate.Click += btn_calculate_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(2, 95);
+            label3.Location = new Point(2, 100);
             label3.Name = "label3";
-            label3.Size = new Size(47, 29);
+            label3.Size = new Size(53, 33);
             label3.TabIndex = 5;
             label3.Text = "ΦN";
             // 
@@ -114,9 +116,9 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(8, 60);
+            label2.Location = new Point(8, 63);
             label2.Name = "label2";
-            label2.Size = new Size(29, 29);
+            label2.Size = new Size(33, 33);
             label2.TabIndex = 4;
             label2.Text = "Q";
             // 
@@ -124,36 +126,37 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(12, 25);
+            label1.Location = new Point(12, 26);
             label1.Name = "label1";
-            label1.Size = new Size(25, 29);
+            label1.Size = new Size(29, 33);
             label1.TabIndex = 3;
             label1.Text = "P";
             // 
             // tb_phiN
             // 
             tb_phiN.Font = new Font("Calibri", 11.7818184F);
-            tb_phiN.Location = new Point(55, 95);
+            tb_phiN.Location = new Point(55, 100);
             tb_phiN.Name = "tb_phiN";
-            tb_phiN.Size = new Size(239, 29);
+            tb_phiN.ReadOnly = true;
+            tb_phiN.Size = new Size(239, 31);
             tb_phiN.TabIndex = 2;
             toolTip_key.SetToolTip(tb_phiN, "(P - 1) * (Q - 1). Used to calculate the private key.");
             // 
             // tb_numQ
             // 
             tb_numQ.Font = new Font("Calibri", 11.7818184F);
-            tb_numQ.Location = new Point(55, 60);
+            tb_numQ.Location = new Point(55, 63);
             tb_numQ.Name = "tb_numQ";
-            tb_numQ.Size = new Size(239, 29);
+            tb_numQ.Size = new Size(239, 31);
             tb_numQ.TabIndex = 1;
             toolTip_key.SetToolTip(tb_numQ, "A Prime Number");
             // 
             // tb_numP
             // 
             tb_numP.Font = new Font("Calibri", 11.7818184F);
-            tb_numP.Location = new Point(55, 25);
+            tb_numP.Location = new Point(55, 26);
             tb_numP.Name = "tb_numP";
-            tb_numP.Size = new Size(239, 29);
+            tb_numP.Size = new Size(239, 31);
             tb_numP.TabIndex = 0;
             toolTip_key.SetToolTip(tb_numP, "A Prime Number");
             // 
@@ -164,9 +167,9 @@
             groupBox3.Controls.Add(tb_numE);
             groupBox3.Controls.Add(label4);
             groupBox3.Font = new Font("Calibri", 11.7818184F, FontStyle.Bold);
-            groupBox3.Location = new Point(321, 12);
+            groupBox3.Location = new Point(321, 13);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(303, 103);
+            groupBox3.Size = new Size(303, 108);
             groupBox3.TabIndex = 2;
             groupBox3.TabStop = false;
             groupBox3.Text = "Public Key";
@@ -174,10 +177,10 @@
             // tb_numN
             // 
             tb_numN.Font = new Font("Calibri", 11.7818184F);
-            tb_numN.Location = new Point(55, 25);
+            tb_numN.Location = new Point(55, 26);
             tb_numN.Name = "tb_numN";
             tb_numN.ReadOnly = true;
-            tb_numN.Size = new Size(239, 29);
+            tb_numN.Size = new Size(239, 31);
             tb_numN.TabIndex = 9;
             toolTip_key.SetToolTip(tb_numN, "Modulus (P * Q), part of both public and private keys.");
             // 
@@ -185,19 +188,18 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(22, 57);
+            label5.Location = new Point(22, 60);
             label5.Name = "label5";
-            label5.Size = new Size(25, 29);
+            label5.Size = new Size(28, 33);
             label5.TabIndex = 8;
             label5.Text = "E";
             // 
             // tb_numE
             // 
             tb_numE.Font = new Font("Calibri", 11.7818184F);
-            tb_numE.Location = new Point(55, 60);
+            tb_numE.Location = new Point(55, 63);
             tb_numE.Name = "tb_numE";
-            tb_numE.ReadOnly = true;
-            tb_numE.Size = new Size(239, 29);
+            tb_numE.Size = new Size(239, 31);
             tb_numE.TabIndex = 7;
             toolTip_key.SetToolTip(tb_numE, "Public Exponent.");
             // 
@@ -205,9 +207,9 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(20, 25);
+            label4.Location = new Point(20, 26);
             label4.Name = "label4";
-            label4.Size = new Size(29, 29);
+            label4.Size = new Size(32, 33);
             label4.TabIndex = 6;
             label4.Text = "N";
             // 
@@ -216,9 +218,9 @@
             groupBox4.Controls.Add(label6);
             groupBox4.Controls.Add(tb_numD);
             groupBox4.Font = new Font("Calibri", 11.7818184F, FontStyle.Bold);
-            groupBox4.Location = new Point(321, 121);
+            groupBox4.Location = new Point(321, 127);
             groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(303, 65);
+            groupBox4.Size = new Size(303, 68);
             groupBox4.TabIndex = 3;
             groupBox4.TabStop = false;
             groupBox4.Text = "Private Key";
@@ -227,19 +229,19 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Calibri", 15.7090912F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(22, 28);
+            label6.Location = new Point(22, 29);
             label6.Name = "label6";
-            label6.Size = new Size(28, 29);
+            label6.Size = new Size(32, 33);
             label6.TabIndex = 9;
             label6.Text = "D";
             // 
             // tb_numD
             // 
             tb_numD.Font = new Font("Calibri", 11.7818184F);
-            tb_numD.Location = new Point(58, 28);
+            tb_numD.Location = new Point(58, 29);
             tb_numD.Name = "tb_numD";
             tb_numD.ReadOnly = true;
-            tb_numD.Size = new Size(239, 29);
+            tb_numD.Size = new Size(239, 31);
             tb_numD.TabIndex = 9;
             toolTip_key.SetToolTip(tb_numD, "Private Exponent.");
             // 
@@ -254,9 +256,9 @@
             groupBox6.Controls.Add(label7);
             groupBox6.Controls.Add(tb_inputText);
             groupBox6.Font = new Font("Calibri", 11.7818184F, FontStyle.Bold);
-            groupBox6.Location = new Point(12, 192);
+            groupBox6.Location = new Point(12, 202);
             groupBox6.Name = "groupBox6";
-            groupBox6.Size = new Size(616, 288);
+            groupBox6.Size = new Size(616, 303);
             groupBox6.TabIndex = 3;
             groupBox6.TabStop = false;
             groupBox6.Text = "Encryption";
@@ -264,82 +266,87 @@
             // btn_clear
             // 
             btn_clear.Font = new Font("Calibri", 11.7818184F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_clear.Location = new Point(9, 247);
+            btn_clear.Location = new Point(9, 260);
             btn_clear.Name = "btn_clear";
-            btn_clear.Size = new Size(93, 32);
+            btn_clear.Size = new Size(93, 34);
             btn_clear.TabIndex = 16;
             btn_clear.Text = "Clear";
             btn_clear.UseVisualStyleBackColor = true;
+            btn_clear.Click += btn_clear_Click;
             // 
             // btn_import
             // 
             btn_import.Font = new Font("Calibri", 11.7818184F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_import.Location = new Point(108, 247);
+            btn_import.Location = new Point(108, 260);
             btn_import.Name = "btn_import";
-            btn_import.Size = new Size(93, 32);
+            btn_import.Size = new Size(93, 34);
             btn_import.TabIndex = 15;
             btn_import.Text = "Import";
             btn_import.UseVisualStyleBackColor = true;
             // 
             // btn_encrypt
             // 
+            btn_encrypt.Enabled = false;
             btn_encrypt.Font = new Font("Calibri", 11.7818184F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_encrypt.Location = new Point(415, 247);
+            btn_encrypt.Location = new Point(415, 260);
             btn_encrypt.Name = "btn_encrypt";
-            btn_encrypt.Size = new Size(93, 32);
+            btn_encrypt.Size = new Size(93, 34);
             btn_encrypt.TabIndex = 14;
             btn_encrypt.Text = "Encrypt";
             btn_encrypt.UseVisualStyleBackColor = true;
+            btn_encrypt.Click += btn_encrypt_Click;
             // 
             // btn_decrypt
             // 
+            btn_decrypt.Enabled = false;
             btn_decrypt.Font = new Font("Calibri", 11.7818184F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btn_decrypt.Location = new Point(514, 247);
+            btn_decrypt.Location = new Point(514, 260);
             btn_decrypt.Name = "btn_decrypt";
-            btn_decrypt.Size = new Size(93, 32);
+            btn_decrypt.Size = new Size(93, 34);
             btn_decrypt.TabIndex = 8;
             btn_decrypt.Text = "Decrypt";
             btn_decrypt.UseVisualStyleBackColor = true;
+            btn_decrypt.Click += btn_decrypt_Click;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Calibri", 11.7818184F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label8.Location = new Point(10, 134);
+            label8.Location = new Point(10, 141);
             label8.Name = "label8";
-            label8.Size = new Size(66, 22);
+            label8.Size = new Size(75, 24);
             label8.TabIndex = 13;
             label8.Text = "Output:";
             // 
             // tb_outputText
             // 
             tb_outputText.Font = new Font("Calibri", 11.7818184F);
-            tb_outputText.Location = new Point(9, 159);
+            tb_outputText.Location = new Point(9, 167);
             tb_outputText.Multiline = true;
             tb_outputText.Name = "tb_outputText";
             tb_outputText.ReadOnly = true;
             tb_outputText.ScrollBars = ScrollBars.Vertical;
-            tb_outputText.Size = new Size(598, 82);
+            tb_outputText.Size = new Size(598, 86);
             tb_outputText.TabIndex = 12;
             // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Calibri", 11.7818184F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label7.Location = new Point(6, 20);
+            label7.Location = new Point(6, 21);
             label7.Name = "label7";
-            label7.Size = new Size(53, 22);
+            label7.Size = new Size(60, 24);
             label7.TabIndex = 11;
             label7.Text = "Input:";
             // 
             // tb_inputText
             // 
             tb_inputText.Font = new Font("Calibri", 11.7818184F);
-            tb_inputText.Location = new Point(9, 45);
+            tb_inputText.Location = new Point(9, 47);
             tb_inputText.Multiline = true;
             tb_inputText.Name = "tb_inputText";
             tb_inputText.ScrollBars = ScrollBars.Vertical;
-            tb_inputText.Size = new Size(598, 82);
+            tb_inputText.Size = new Size(598, 86);
             tb_inputText.TabIndex = 10;
             tb_inputText.TextChanged += textBox1_TextChanged;
             // 
@@ -349,9 +356,9 @@
             // 
             // RSA_Form
             // 
-            AutoScaleDimensions = new SizeF(8F, 19F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(637, 494);
+            ClientSize = new Size(637, 520);
             Controls.Add(groupBox3);
             Controls.Add(groupBox4);
             Controls.Add(groupBox6);
