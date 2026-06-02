@@ -283,6 +283,7 @@
             btn_import.TabIndex = 15;
             btn_import.Text = "Import";
             btn_import.UseVisualStyleBackColor = true;
+            btn_import.Click += btn_import_Click;
             // 
             // btn_encrypt
             // 

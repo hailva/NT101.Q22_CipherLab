@@ -348,7 +348,7 @@ namespace CipherLab
                 MessageBox.Show("Thiếu thông số public N để giải mã!", "Lỗi");
                 return;
             }
-            else if(string.IsNullOrEmpty(tb_numD.Text))
+            else if (string.IsNullOrEmpty(tb_numD.Text))
             {
                 MessageBox.Show("Thiếu thông số private D để giải mã!", "Lỗi");
                 return;
@@ -396,6 +396,26 @@ namespace CipherLab
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi giải mã: Dữ liệu đầu vào không đúng định dạng số.\n" + ex.Message);
+            }
+        }
+
+        private void btn_import_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog ofd = new OpenFileDialog())
+            {
+                ofd.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        tb_inputText.Text = System.IO.File.ReadAllText(ofd.FileName);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Could not read file: " + ex.Message,
+                            "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
             }
         }
     }
